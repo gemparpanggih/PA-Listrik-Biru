@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Title & Web Icon -->
-    <title>Listrik Biru - Pemrograman Web</title>
+    <title>Listrik Biru</title>
     <link rel="shortcut icon" href="img/logo/logo-listrik.png">
     
     <!-- Link Font -->
