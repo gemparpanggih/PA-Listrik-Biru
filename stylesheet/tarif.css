@@ -1,0 +1,153 @@
+.container{
+    margin: auto;
+    width: 700px;
+}
+
+input{
+	background: #ffffff;
+	padding: 10px;
+	color: rgb(0, 0, 0);
+	border-radius: 5px;
+	border: 1px solid blue;
+	font-weight: bold;
+	cursor: pointer;
+} 
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto  auto auto auto;
+    gap: 10px;
+    padding: 10px;
+}
+  
+.grid-container > div {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.grid-container > div p{
+    width: 150px;
+    margin: auto;
+    line-height: 1.5;
+    font-size: 10px;
+    color: white;
+    background: #171717;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-container > div img{
+    width: 150px;
+    height: 200px;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.grid-container > div p .edit{
+    background: #1886e4;
+    line-height: 3;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.grid-container > div p .hapus{
+    background: #d41010;
+    line-height: 3;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.add-card {
+    position: static;
+    margin-left: 7px;
+}
+
+.add-img {
+    position: absolute;
+}
+
+.add-card img:hover {
+    cursor: pointer;
+    height: 210px;
+}
+
+.grid-container img {
+    cursor: pointer;
+}
+
+@media (max-width: 650px) {
+    .container{
+        margin: auto;
+        width: 350px;
+    }
+    
+    input{
+        background: #ffffff;
+        padding: 10px;
+        color: rgb(0, 0, 0);
+        border-radius: 5px;
+        border: 1px solid blue;
+        font-weight: bold;
+        cursor: pointer;
+    } 
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 10px;
+        padding: 10px;
+    }
+      
+    .grid-container > div {
+        text-align: center;
+    }
+    
+    .grid-container > div img{
+        width: 150px;
+        height: 200px;
+        margin: auto;
+        transition: 0.5s;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .grid-container > div p .edit{
+        background: #1886e4;
+        line-height: 3;
+        padding: 5px;
+        color: white;
+        font-weight: bold;
+    }
+    
+    .grid-container > div p .hapus{
+        background: #d41010;
+        line-height: 3;
+        padding: 5px;
+        color: white;
+        font-weight: bold;
+    }
+    
+    .add-card {
+        position: static;
+        margin-left: 7px;
+    }
+    
+    .add-img {
+        position: absolute;
+    }
+    
+    .add-card img:hover {
+        cursor: pointer;
+        height: 210px;
+    }
+    
+    .grid-container img {
+        cursor: pointer;
+    }
+}

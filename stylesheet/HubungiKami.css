@@ -1,0 +1,139 @@
+body {
+    padding-top: 10vh;
+    background-color: #DFF6FF;
+}
+        
+.mainHK {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    font-family: 'Ubuntu', sans-serif;
+    width: 80vw;
+    padding: 30px;
+}
+        
+.bungkus1 {
+    display: flex;
+    width: 90%;
+}
+        
+form {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    text-align: center;
+    color: #1363DF;
+    border-radius: 5px;
+    padding: 7px;
+}
+
+.inputHK{
+    width: 95%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin: 10px;
+    font-family: 'Ubuntu', sans-serif;
+}
+  
+input {
+    margin: 5px 15px;
+    height: 25px;
+}
+textarea {
+    height: 150px;
+    margin: 5px 15px;
+    resize: vertical;
+}
+button, a {
+    margin: 5px 15px;
+    width: 80px;
+    background: linear-gradient(to right, #1363DF, #47B5FF);
+    padding: 3px 10px;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.bungkus2 {
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    background: #1363DF;
+    color: white;
+    border-radius: 5px;
+    padding: 7px;
+    box-shadow: 0 0 15px rgb(46, 119, 196);
+}   
+.kontak{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+.infoHK{
+    padding: 25px;
+}
+
+.bungkus2 h3 {
+    text-align: center;
+}
+.bungkus2 p {
+    font-size: 15px;
+    margin-left: 15px;
+}
+.bungkus2 p a{
+color: white;
+}
+.bungkus2 p a:hover{
+color: rgb(160, 154, 154);
+}
+
+.material-icons{
+    width: 12px;
+    margin: 5px;
+}
+
+.btn-pesan {
+    display: flex;
+}
+
+@media screen and (max-width:780px) {
+    body{
+        padding-top: 30px;
+    }
+
+    .bungkus1 {
+        flex-direction: column;
+        width: 90%;
+    }
+    form{
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .bungkus2{
+        width: 100%;
+        margin-top: 10px;
+    }
+    .mainHK{
+        margin-left: -7px;
+    }
+}
