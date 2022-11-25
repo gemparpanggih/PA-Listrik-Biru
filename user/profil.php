@@ -17,95 +17,55 @@
     }
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Title & Web Icon -->
-    <title>Listrik Biru</title>
-    <link rel="shortcut icon" href="../img/logo/logo-listrik.png">
-    
-    <!-- Link Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="//db.onlinewebfonts.com/c/213e56f9ea368890b9d2da0577e49dab?family=Zona+Pro" rel="stylesheet" type="text/css"/>
+        <!-- Title & Web Icon -->
+        <title>Listrik Biru</title>
+        <link rel="shortcut icon" href="../img/logo/logo-listrik.png">
+        
+        <!-- Link Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link href="//db.onlinewebfonts.com/c/213e56f9ea368890b9d2da0577e49dab?family=Zona+Pro" rel="stylesheet" type="text/css"/>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../stylesheet/style.css">
-    <link rel="stylesheet" href="../stylesheet/style-mobile.css">
-</head>
-<body class="mode-bg">
-    <!-- HEADER -->
-    <header class="main" id="home">
-        <!-- navbar -->
-        <nav class="mode-bg">
-            <div class="logo">
-                <a href="../index.php" class="mode-text">
-                    <img src="../img/logo/logo-listrik.png" alt="">
-                    <p>Listrik Biru</p>
-                </a>
-            </div>
-
-            <ul>
-                <li><a class="mode-text" href="../tarif.php">Tarif</a></li>
-                <?php if($_SESSION['akun']['level'] == 'admin') { ?>
-                    <li><a class="mode-text" href="#">Transaksi</a></li>
-                    <li><a class="mode-text" href="../pelanggan.php">Pelanggan</a></li>
-                <?php } if($_SESSION['akun']['level'] == 'user') { ?>
-                    <li><a class="mode-text" href="profil.php">Profil</a></li>
-                    <li><a class="mode-text" href="kontak.php">Kontak</a></li>
-                <?php } ?>
-                <div class="logout-btn">
-                    <a href="../auth/logout.php">Logout</a>
-                </div>
-            </ul>
-            <div class="dark-mode-toggle">
-                <input type="checkbox" class="checkbox" id="chk"/>
-                <label class="label" for="chk">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                    <div class="ball"></div>
-                </label>
-            </div>
-
-            <div class="menu-toggle">
-                <input type="checkbox" id="menTog"/>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-        <!-- end navbar -->
-    </header>
-    <!-- END HEADER -->
-    
-    <!-- PROFIL CONTENT -->
-    <section id="profil">
-        <!-- Data User -->
-        <div class="container-udata">
-            <div class="udata-right">
-                <img src="../img/profil/<?php echo $data['foto'] ?>" alt="">
-            </div>
-            <div class="udata-left">
-                <h2 class="mode-text"><?php echo $data['nama'] ?></h2>
-                <div class="uleft-content">
-                    <div class="baca-data">
-                        <p><?php echo $data['id'] ?></p>
-                        <p><?php echo $data['username'] ?></p>
-                        <p><?php echo $data['telepon'] ?></p>
-                        <p><?php echo $data['alamat'] ?></p>
+        <!-- CSS -->
+        <link rel="stylesheet" href="../stylesheet/new/main.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    </head>
+    <body id="profil">
+        <!-- Profil User -->
+        <section id="profil-user">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-2 d-flex flex-row-reverse">
+                        <img src="../img/profil/<?php echo $data['foto'] ?>" class="img-thumbnail h-auto" alt="">
                     </div>
-                    <div class="aksi-data">
-                        <div class="ubah-pwd"><a href="profil/ubah-pwd.php?id=<?php echo $data['id'] ?>" class="mode-text">Ubah password</a></div>
-                        <div class="ubah-data"><a href="profil/edit.php?id=<?php echo $data['id'] ?>" class="mode-text">Ubah data</a></div>
+                    <div class="col-5">
+                        <div class="row">
+                            <h3><?php echo $data['nama'] ?></h3>
+                        </div>
+                        <div class="row">
+                            <div class="col profil-data-user">
+                                <p class="m-0"><?php echo $data['id'] ?></p>
+                                <p class="m-0"><?php echo $data['username'] ?></p>
+                                <p class="m-0"><?php echo $data['telepon'] ?></p>
+                                <p class="m-0"><?php echo $data['alamat'] ?></p>
+                            </div>
+                            <div class="col d-flex flex-column justify-content-between text-end profil-aksi-data">
+                                <a href="profil/ubah-pwd.php?id=<?php echo $data['id'] ?>"><p class="m-0">Edit Akun</p></a>
+                                <a href="profil/edit.php?id=<?php echo $data['id'] ?>"><p class="m-0">Ubah Password</p></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- End Data User -->
+        </section>
+        <!-- End Profil User -->
 
         <!-- Riwayat Transaksi -->
         <?php 
@@ -113,13 +73,13 @@
 
             if(mysqli_num_rows($read) > 0){
         ?>
-        <div class="daftar-data">
-            <div class="feature-del-transaksi">
-                <a href="aksi/delete_history.php" class="btn-action erase-btn">Hapus Riwayat Transaksi</a>
-            </div>
-            <div class="table-user hover-table mode-text">
-                <table>                 
-                    <thead class="mode-border">
+        <section id="transaksi-user">
+            <div class="container mt-5">
+                <div class="delete-history mb-3">
+                    <a href="aksi/delete_history.php" class="btn btn-danger">Hapus Riwayat Transaksi</a>
+                </div>
+                <table class="table table-hover">
+                    <thead class="table-dark">
                         <tr>
                             <th>ID TRANSAKSI</th>
                             <th>TANGGAL</th>
@@ -130,7 +90,7 @@
                             <th>TARIF</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="table-group-divider">
                         <?php while($row = mysqli_fetch_array($read)){ ?>
                                 <tr class="games-content">
                                     <td><?php echo $row['id']?></td>
@@ -145,50 +105,15 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </section>
         <?php } ?>
         <!-- End Riwayat Transaksi -->
-    </section>
-    <!-- END PROFIL CONTENT -->
-    
-    <!-- FOOTER -->
-    <footer class="mode-bg" style="border-top: 1px solid white; margin-top: 25px; position: static;" id="profil">
-        <div class="footer-container">
-            <div class="footer-title" id="contact">
-                <h2>CONTACT US</h2>
-            </div>
-            <div class="footer-contact-item">
-                <div class="footer-item">
-                    <h4>Location</h4>
-                    <p>28 Jackson Blvd Ste 1020 Chicago<br>IL 60604-2340<br>Phone: +628 135 158 0524</p>
-                </div>
-                <div class="footer-item">
-                    <h4>Find Us On</h4>
-                    <div class="circle-container">
-                        <!-- salah satu fitur pop up box (confirm) -->
-                        <div class="circle ig">
-                            <a href="https://www.instagram.com/pixel" onclick="return confirm('You will be redirected to other website.');"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                        <div class="circle fb">
-                            <a href="https://www.facebook.com/pixel" onclick="return confirm('You will be redirected to other website.');"><i class="fa-brands fa-facebook"></i></a>
-                        </div>
-                        <div class="circle wa">
-                            <a href="https://www.whatsapp.com/pixel" onclick="return confirm('You will be redirected to other website.');"><i class="fa-brands fa-whatsapp"></i></a>
-                        </div>
-                        <div class="circle tw">
-                            <a href="https://www.twitter.com/pixel" onclick="return confirm('You will be redirected to other website.');"><i class="fa-brands fa-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- END FOOTER -->
 
-    <!-- javascript -->
-    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <script src="../js/navbar-mobile.js"></script>
-    <script src="../js/dark-mode.js"></script>
-    <script src="https://kit.fontawesome.com/a374d5ed26.js" crossorigin="anonymous"></script>
-</body>
+        <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+            <div class="container text-center">
+                <small>Copyright &copy; Your Website</small>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    </body>
 </html>
