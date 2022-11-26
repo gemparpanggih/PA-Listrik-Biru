@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Title & Web Icon -->
-    <title>Listrik Biru</title>
+    <title>Listrik Biru - Hendi</title>
     <link rel="shortcut icon" href="img/logo/logo-listrik.png">
     
     <!-- Link Font -->
