@@ -24,14 +24,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Title & Web Icon -->
-        <title>Listrik Biru</title>
-        <link rel="shortcut icon" href="../img/logo/logo-listrik.png">
-        
-        <!-- Link Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-        <link href="//db.onlinewebfonts.com/c/213e56f9ea368890b9d2da0577e49dab?family=Zona+Pro" rel="stylesheet" type="text/css"/>
+    <!-- Title & Web Icon -->
+    <title>Listrik Biru</title>
+    <link rel="shortcut icon" href="assets/img/logo/logo-listrik.png">
+    
+    <!-- Link Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="//db.onlinewebfonts.com/c/213e56f9ea368890b9d2da0577e49dab?family=Zona+Pro" rel="stylesheet" type="text/css"/>
 
         <!-- CSS -->
         <link rel="stylesheet" href="../stylesheet/new/main.css">
