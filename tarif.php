@@ -26,130 +26,115 @@
 
     <!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="stylesheet/tarif.css">
-    <link rel="stylesheet" href="stylesheet/style.css">
+    <link rel="stylesheet" href="stylesheet/landingpage.css">
     <link rel="stylesheet" href="stylesheet/style-mobile.css">
+    <link rel="stylesheet" href="stylesheet/component/sidebar.css">
+    <link rel="stylesheet" href="stylesheet/nonavbar.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"/>
+ 
 </head>
-<body class="mode-bg">
-    <!-- HEADER -->
-    <header class="main" id="home">
-        <!-- navbar -->
-        <nav class="mode-bg">
-            <div class="logo">
-                <a href="index.php" class="mode-text">
-                    <img src="img/logo/logo-listrik.png" alt="">
-                    <p>Listrik Biru</p>
-                </a>
-            </div>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar offcanvas-lg offcanvas-start mode-bg">
+        <div class="d-flex  m-4 d-block d-lg-none mode-bg">
+            <button data-bs-dismiss="offcanvas" data-bs-target=".sidebar" class="btn p-0 border-0 fs-4" aria-label="Button Close">
+            <i class="fas fa-close"></i>
+            </button>
+        </div>
 
-            <ul>
-                <li><a class="mode-text" href="tarif.php">Tarif</a></li>
+        <!-- Logo -->
+        <div class="logo-brand mt-lg-5">
+            <a href="index.php">
+                <img src="img/logo/logo-listrik.png" alt="Logo" width="45" height="50"/>
+            </a>
+            <div>
+                <h6 class="title">Listrik Biru</h6>
+                <p class="tagline">Nyalakan Rumah Anda</p>
+            </div>
+        </div>
+
+        <!-- Menu -->
+        <hr/>
+        <nav class="menu flex-fill">
+            <div class="section-menu">
+                <a class="item-menu" href="tarif.php">Tarif</a>
                 <?php if($_SESSION['akun']['level'] == 'admin') { ?>
-                    <li><a class="mode-text" href="admin/transaksi.php">Transaksi</a></li>
-                    <li><a class="mode-text" href="admin/pelanggan.php">Pelanggan</a></li>
-                    <li><a class="mode-text" href="admin/daftar-pesan.php">Kontak</a></li>
-                <?php } if($_SESSION['akun']['level'] == 'user') { ?>
-                    <li><a class="mode-text" href="user/profil.php">Profil</a></li>
-                    <li><a class="mode-text" href="user/kontak.php">Kontak</a></li>
-                <?php } ?>
-                <div class="logout-btn">
-                    <a href="auth/logout.php">Logout</a>
-                </div>
-            </ul>
-            <div class="dark-mode-toggle">
-                <input type="checkbox" class="checkbox" id="chk"/>
-                <label class="label" for="chk">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                    <div class="ball"></div>
-                </label>
-            </div>
+                    <a class="item-menu" href="admin/transaksi.php">Transaksi</a>
+                    <a class="item-menu" href="admin/pelanggan.php">Pelanggan</a>
+                    <a class="item-menu" href="admin/daftar-pesan.php">Kontak</a>
 
-            <div class="menu-toggle">
-                <input type="checkbox" id="menTog"/>
-                <span></span>
-                <span></span>
-                <span></span>
+                <?php } if($_SESSION['akun']['level'] == 'user') { ?>
+                    <a class="item-menu" href="user/profil.php">Profil</a>
+                    <a class="item-menu" href="user/kontak.php">Kontak</a>
+                <?php } ?>
             </div>
         </nav>
-        <!-- end navbar -->
-    </header>
-    <!-- END HEADER -->
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="logout-btn">
+                <a href="auth/logout.php">Logout</a>
+            </div>
+            <p class="Keterangan" >Projek Akhir Pemrograman Web</p>
+        </footer>
+        <!-- END FOOTER -->
+    </aside>
+    <!-- End Sidebar -->
 	
     <!-- TARIF CONTENT -->
-    <div class="container minggirin-navbar">
-        <div class="grid-container">
-            <?php
-                require('php/connection.php');
-				$sql="SELECT * FROM tarif";
-				$query= mysqli_query($conn, $sql);
-				while ($data = mysqli_fetch_array($query)) {
-			?>
-                <div>
-                    <img src="img/voltase/<?php echo $data['foto'] ?>" onclick="window.location='tarif/tambah.php'"/>
-                    <p>
-                        <?php echo "$data[id]"; ?> ||
-                        <?php echo "$data[daya]"; ?><br>
-                    </p>
-                    <p>
-                        Rp.<?php echo "$data[tarifperkwh]"; ?>
-                    </p>
-                    <?php if($_SESSION['akun']['level'] == 'admin') { ?>
-                        <p class="aksi">
-                            <a class="edit" href="tarif/edit.php?id=<?php echo"$data[id]"; ?>">EDIT</a>
-                            <a class="hapus" href="tarif/aksi/delete.php?id=<?php echo"$data[id]"; ?>" onclick="return confirm('YAKINNN !!!')">HAPUS</a>
-                        </p>
+    <main class="content flex-fill mode-bg ">
+        <section class="d-flex flex-column gap-4">
+        <button aria-controls="sidebar" data-bs-toggle="offcanvas" data-bs-target=".sidebar" aria-label="Button Hamburger"
+            class="sidebarOffcanvas mb-5 btn p-0 border-0 d-flex d-lg-none">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+            
+            <div class="container minggirin-navbar">
+                <div class="grid-container">
+                    <?php
+                        require('php/connection.php');
+                        $sql="SELECT * FROM tarif";
+                        $query= mysqli_query($conn, $sql);
+                        while ($data = mysqli_fetch_array($query)) {
+                    ?>
+                        <div>
+                            <img src="img/voltase/<?php echo $data['foto'] ?>" onclick="window.location='tarif/tambah.php'"/>
+                            <p>
+                                <?php echo "$data[id]"; ?> ||
+                                <?php echo "$data[daya]"; ?><br>
+                            </p>
+                            <p>
+                                Rp.<?php echo "$data[tarifperkwh]"; ?>
+                            </p>
+                            <?php if($_SESSION['akun']['level'] == 'admin') { ?>
+                                <p class="aksi">
+                                    <a class="edit" href="tarif/edit.php?id=<?php echo"$data[id]"; ?>">EDIT</a>
+                                    <a class="hapus" href="tarif/aksi/delete.php?id=<?php echo"$data[id]"; ?>" onclick="return confirm('YAKINNN !!!')">HAPUS</a>
+                                </p>
+                            <?php } ?>
+                        </div>
+                    <?php } if($_SESSION['akun']['level'] == 'admin') { ?>
+                        <div class="add-card">
+                            <div class="add-img" onclick="window.location='tarif/tambah.php'">
+                                <img src="img/voltase/add.jpg"/>
+                            </div>
+                        </div>
                     <?php } ?>
                 </div>
-			<?php } if($_SESSION['akun']['level'] == 'admin') { ?>
-                <div class="add-card">
-                    <div class="add-img" onclick="window.location='tarif/tambah.php'">
-                        <img src="img/voltase/add.jpg"/>
-                    </div>
-                </div>
-            <?php } ?>
-        </div>
-    </div>
+            </div>
+        </section>
     <!-- END TARIF CONTENT -->
-    
-    <!-- FOOTER -->
-    <div style="border: 1px solid white; margin-top: 225px;"></div>
-    <footer class="mode-bg" style="position: static">
-        <div class="footer-container">
-            <div class="footer-title" id="contact">
-                <h2>CONTACT US</h2>
-            </div>
-            <div class="footer-contact-item">
-                <div class="footer-item">
-                    <h4>Location</h4>
-                    <p>28 Jackson Blvd Ste 1020 Chicago<br>IL 60604-2340<br>Phone: +628 135 158 0524</p>
-                </div>
-                <div class="footer-item">
-                    <h4>Find Us On</h4>
-                    <div class="circle-container">
-                        <!-- salah satu fitur pop up box (confirm) -->
-                        <div class="circle ig">
-                            <a href="https://www.instagram.com/pixel" onclick="return confirm('You will be redirected to other website.');"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                        <div class="circle fb">
-                            <a href="https://www.facebook.com/pixel" onclick="return confirm('You will be redirected to other website.');"><i class="fa-brands fa-facebook"></i></a>
-                        </div>
-                        <div class="circle wa">
-                            <a href="https://www.whatsapp.com/pixel" onclick="return confirm('You will be redirected to other website.');"><i class="fa-brands fa-whatsapp"></i></a>
-                        </div>
-                        <div class="circle tw">
-                            <a href="https://www.twitter.com/pixel" onclick="return confirm('You will be redirected to other website.');"><i class="fa-brands fa-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- END FOOTER -->
 
     <!-- javascript -->
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="js/navbar-mobile.js"></script>
-    <script src="js/dark-mode.js"></script>
     <script src="https://kit.fontawesome.com/a374d5ed26.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
 </body>
 </html>
