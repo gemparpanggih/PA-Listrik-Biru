@@ -33,3 +33,24 @@ footer {
 /* End Halaman Profil */
 
 /* # END BAGIAN USER */
+
+
+
+/* # BAGIAN ADMIN */
+
+/* Halaman Profil */
+.data-tarif li {
+    list-style: none;
+}
+
+.card-tarif h5,
+.card-tarif ul li {
+    font-size: 14px !important;
+}
+
+a.admin-aksi-tarif {
+    font-size: 10px !important;
+}
+/* End Halaman Profil */
+
+/* # END BAGIAN ADMIN */
