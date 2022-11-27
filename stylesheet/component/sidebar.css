@@ -59,18 +59,6 @@
   color: var(--grey-primary);
 }
 
-.item-menu.active::before {
-  content: '';
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 12px;
-  position: absolute;
-  border-radius: 4px;
-  transform: translateX(-50%);
-  background-color: var(--blue-primary);
-}
-
 .dark .item-menu:hover,
 .item-menu:hover {
   color: var(--blue-primary);

@@ -26,7 +26,7 @@
 
     <!-- Title & Web Icon -->
     <title>Listrik Biru</title>
-    <link rel="shortcut icon" href="../img/logo/logo-listrik.png">
+    <link rel="shortcut icon" href="assets/img/logo/logo-listrik.png">
     
     <!-- Link Font -->
     <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
