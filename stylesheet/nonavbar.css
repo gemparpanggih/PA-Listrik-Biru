@@ -81,7 +81,7 @@ body {
 
 .light-text {
     transition: 0.5s;
-    color: white !important;
+    color: #e9f6ff;
 }
 
 .light-img {
@@ -167,14 +167,14 @@ header {
 
 .header-item-left h1 {
     padding-top: 80px;
-    color: white;
-    text-shadow: 0 0 15px #5558d6 ;
+    color: #181a1b;
+    text-shadow: 0 0 15px #2579d1 ;
     font-family: 'Zona Pro', sans-serif;
 }
 
 .header-item-left p {
     font-size: 14px;
-    color: white;
+    color: #181a1b;
     padding-right: 25%;
     margin: 10px 0;
 }
@@ -196,9 +196,9 @@ header {
 .rent-btn:hover {
     transition: 0.8s;
     cursor: pointer;
-    background-color: #5558d6;
+    background-color: #131e3f;
     color: #fff;
-    border: 1px solid #5558d6;
+    border: 1px solid #131e3f;
 }
 
 .play-btn {
@@ -224,6 +224,7 @@ header {
 
 .header-item-left a {
     text-decoration: none;
+    color: #181a1b;
 }
 
 .header-item-left button {
@@ -232,7 +233,7 @@ header {
 
 .header-item-left h4 {
     font-size: 16px;
-    color: white;
+    color: #181a1b;
     font-weight: lighter;
 }
 
@@ -256,7 +257,7 @@ header {
     font-size: 30px;
     text-align: center;
     font-weight: 700;
-    color: black;
+    color: #181a1b;
 }
 
 /* TABLE */
@@ -372,7 +373,7 @@ header {
     font-size: 30px;
     text-align: center;
     font-weight: 600;
-    color: black;
+    color: #181a1b;
     padding-bottom: 20px;
 }
 
@@ -812,7 +813,7 @@ section#register {
 /* FOOTER */
 footer {
     width: 100%;
-    padding: 120px 120px 30px 120px;
+    padding: 120px 150px 30px 120px;
     color: white;
     display: flex;
     justify-content: center;
@@ -919,10 +920,12 @@ footer {
     /* HEADER */
     .header-container {
         padding: 20px;
+        color: black;
     }
 
     .header-item-left h1 {
         padding-top: 0;
+        color: black;
     }
     
     .header-item-left p {

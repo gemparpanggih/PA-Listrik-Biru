@@ -44,6 +44,7 @@
             </button>
         </div>
 
+        <!-- Logo -->
         <div class="logo-brand mt-lg-5">
         <img src="img/logo/logo-listrik.png" alt="Logo Cari Duit" width="45" height="50"/>
             <div>
@@ -51,46 +52,45 @@
                 <p class="tagline">Nyalakan Rumah Anda</p>
             </div>
         </div>
-      
+
+        <!-- Menu -->
         <hr/>
         <nav class="menu flex-fill">
             <div class="section-menu">
-                    <a class="item-menu" href="tarif.php">Tarif</a>
-                    <?php if($_SESSION['akun']['level'] == 'admin') { ?>
-                        <a class="item-menu" href="admin/transaksi.php">Transaksi</a>
-                        <a class="item-menu" href="admin/pelanggan.php">Pelanggan</a>
-                        <a class="item-menu" href="admin/daftar-pesan.php">Kontak</a>
-                    <?php } if($_SESSION['akun']['level'] == 'user') { ?>
-                        <a class="item-menu" href="user/profil.php">Profil</a>
-                        <a class="item-menu" href="user/kontak.php">Kontak</a>
-                    <?php } ?>
-                
+                <a class="item-menu" href="tarif.php">Tarif</a>
+                <?php if($_SESSION['akun']['level'] == 'admin') { ?>
+                    <a class="item-menu" href="admin/transaksi.php">Transaksi</a>
+                    <a class="item-menu" href="admin/pelanggan.php">Pelanggan</a>
+                    <a class="item-menu" href="admin/daftar-pesan.php">Kontak</a>
+
+                <?php } if($_SESSION['akun']['level'] == 'user') { ?>
+                    <a class="item-menu" href="user/profil.php">Profil</a>
+                    <a class="item-menu" href="user/kontak.php">Kontak</a>
+                <?php } ?>
             </div>
         </nav>
 
+        <!-- FOOTER -->
         <footer>
-            <div class="dark-mode-toggle">
-                <input type="checkbox" class="checkbox" id="chk"/>
-                <label class="label" for="chk">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                    <div class="ball"></div>
-                </label>
-            </div>
-
             <div class="logout-btn">
                 <a href="auth/logout.php">Logout</a>
             </div>
+            <p class="Keterangan" >Projek Akhir Pemrograman Web</p>
         </footer>
-    </aside>
+        <!-- END FOOTER -->
 
+    </aside>
+    <!-- End Sidebar -->
+    
+    <!-- MAIN CONTENT -->
     <main class="content flex-fill mode-bg ">
         <section class="d-flex flex-column gap-4">
         <button aria-controls="sidebar" data-bs-toggle="offcanvas" data-bs-target=".sidebar" aria-label="Button Hamburger"
             class="sidebarOffcanvas mb-5 btn p-0 border-0 d-flex d-lg-none">
             <i class="fa-solid fa-bars"></i>
         </button>
-
+            
+            <!-- Header -->
             <div class="header-container mode-text">
                 <div class="header-item-left">
 
@@ -114,7 +114,8 @@
                     </a>
                 </div>
             </div>
-
+            
+            <!-- About Us -->
             <div class="about-container mode-text" id="about">
                 <div class="about-title">
                     <h2>ABOUT US</h2>
@@ -124,7 +125,8 @@
                     <p class="about-item-right">Lebih dari 1 tarif tersedia. Pada Mei 2018, Electronic Arts mengumumkan bahwa mereka mengakuisisi aset dan personel teknologi cloud dari <b>Listrik Biru</b> (termasuk pos terdepan Chicago). <b>Listrik Biru</b> saat ini dimiliki oleh grup kepemilikan yang sama dengan Alliance Entertainment dan dioperasikan sebagai perusahaan yang berdiri sendiri.</p>
                 </div>
             </div>
-
+            
+            <!-- Harga Tarif -->
             <div class="service-container mode-text">
                 <h3>Daftar Tarif</h3>
                 <div class="service-cards">
@@ -152,24 +154,11 @@
                 </div>
             </div>
         </section>
-
-    <!-- HEADER -->
-    <!-- END HEADER -->
-
-
-    <!-- MAIN CONTENT -->
-    
     <!-- END MAIN CONTENT -->
-
-
-    <!-- FOOTER -->
-    <!-- END FOOTER -->
 
     <!-- javascript -->
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <script src="js/dark-mode.js"></script>
     <script src="js/navbar-mobile.js"></script>
-    <script src="js/index.js"></script>
     <script src="https://kit.fontawesome.com/a374d5ed26.js" crossorigin="anonymous"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
