@@ -157,10 +157,10 @@
                                         <td>
                                             <div class="action">
                                                 <a class="btn-action edit-action" href="pelanggan/edit.php?id=<?php echo $row['id'] ?>">
-                                                    <i class="fa-solid fa-square-pen"></i> Edit
+                                                    <i></i> Edit
                                                 </a>
                                                 <a class="btn-action del-action" href="pelanggan/hapus.php?id=<?php echo $row['id'] ?>">
-                                                    <i class="fa-sharp fa-solid fa-circle-xmark"></i> Hapus
+                                                    <i></i> Hapus
                                                 </a>
                                             </div>
                                         </td>
