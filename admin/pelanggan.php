@@ -95,67 +95,68 @@
     <!-- MAIN CONTENT -->
     <main class="content flex-fill mode-bg ">
         <section class="d-flex flex-column gap-4">
-        <button aria-controls="sidebar" data-bs-toggle="offcanvas" data-bs-target=".sidebar" aria-label="Button Hamburger"
-            class="sidebarOffcanvas mb-5 btn p-0 border-0 d-flex d-lg-none">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+            <button aria-controls="sidebar" data-bs-toggle="offcanvas" data-bs-target=".sidebar" aria-label="Button Hamburger"
+                class="sidebarOffcanvas mb-5 btn p-0 border-0 d-flex d-lg-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
             
-        <div class="minggirin-navbar">
-            <div class="feature">
-                <form method="GET" class="search-container cari-nama">
-                    <input type="text" name="keyword" id="keyword" class="search-input" placeholder="Cari Pelanggan">
-                    <button type="submit" name="search" class="btn-search search"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col d-flex justify-content-start">
+                        <form method="GET">
+                            <div class="input-group mb-3 w-100">
+                                <input type="text" class="form-control" name="keyword" placeholder="Cari Pelanggan" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" type="submit" name="search" id="button-addon2"><i class="fas fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="table-dark text-nowrap">
+                                    <tr>
+                                        <th>NO</th>
+                                        <th>ID PELANGGAN</th>
+                                        <th>USERNAME</th>
+                                        <th>NAMA</th>
+                                        <th>NO TELP</th>
+                                        <th>ALAMAT</th>
+                                        <th>TRANSAKSI</th>
+                                        <th>AKSI</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-group-divider text-nowrap">
+                                    <?php 
+                                        require('../php/connection.php');
+                                        if(isset($_GET['search'])) {
+                                            $keyword = $_GET['keyword'];
+                                            $read = mysqli_query($conn, "SELECT * FROM user WHERE username LIKE '%$keyword%' OR nama LIKE '%$keyword%' AND level != 'admin'");
+                                        } else {
+                                            $read = mysqli_query($conn, "SELECT * FROM user WHERE level != 'admin'");
+                                        }
 
-            <div class="daftar-data">
-                <?php if(isset($_GET['pesan'])) { ?>
-                    <p class="success-message" style="margin-top: 5px;"><?php echo $_GET['pesan']; ?></p>
-                <?php } ?> 
-                <div class="table-user hover-table mode-text">
-                    <table>
-                        <thead class="mode-border">
-                            <tr>
-                                <th>NO</th>
-                                <th>ID PELANGGAN</th>
-                                <th>USERNAME</th>
-                                <th>NAMA</th>
-                                <th>NO TELP</th>
-                                <th>ALAMAT</th>
-                                <th>TRANSAKSI</th>
-                                <th>AKSI</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php 
-                                require('../php/connection.php');
-                                if(isset($_GET['search'])) {
-                                    $keyword = $_GET['keyword'];
-                                    $read = mysqli_query($conn, "SELECT * FROM user WHERE username LIKE '%$keyword%' OR nama LIKE '%$keyword%' AND level != 'admin'");
-                                } else {
-                                    $read = mysqli_query($conn, "SELECT * FROM user WHERE level != 'admin'");
-                                }
-
-                                if(mysqli_num_rows($read) > 0){
-                                    $nomor = 1;
-                                    while($row = mysqli_fetch_array($read)){
-                                ?>
-                                    <tr class="games-content">
+                                        if(mysqli_num_rows($read) > 0){
+                                            $nomor = 1;
+                                            while($row = mysqli_fetch_array($read)){
+                                    ?>
+                                    <tr>
                                         <td><?php echo $nomor++?></td>
                                         <td><?php echo $row['id']?></td>
                                         <td><?php echo $row['username']?></td>
                                         <td><?php echo $row['nama']?></td>
-                                        <td><?php echo $row['telepon']?></td>
+                                        <td><?php  echo $row['telepon']?></td>
                                         <td><?php echo $row['alamat']?></td>
                                         <td>
                                             <div class="action">
-                                                <a class="btn-action read-action" href="transaksi.php?keyword=<?php echo $row['id'] ?>&search=">
+                                                <a class="btn-action read-action" href="transaksi.php?keyword=<?php  echo $row['id'] ?>&search=">
                                                     <i class="fa-solid fa-eye"></i> Lihat
                                                 </a>
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="action">
+                                            <div class="">
                                                 <a class="btn-action edit-action" href="pelanggan/edit.php?id=<?php echo $row['id'] ?>">
                                                     <i></i> Edit
                                                 </a>
@@ -165,13 +166,15 @@
                                             </div>
                                         </td>
                                     </tr>
-                            <?php }} else { ?>
-                                <tr>
-                                    <td colspan="8" align="center">-- data tidak ditemukan --</td>
-                                </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
+                                    <?php }} else { ?>
+                                    <tr>
+                                        <td colspan="8" align="center">-- data tidak ditemukan --</td>
+                                    </tr>
+                                    <?php  } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
