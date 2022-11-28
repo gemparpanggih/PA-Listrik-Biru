@@ -133,15 +133,16 @@
             <div class="tarif-admin">
                 <h3>Daftar Tarif</h3>
                 <div class="container mt-4">
-                    <div class="row w-75">
+                    <div class="row">
                         <?php
                             require('php/connection.php');
 
                             $sql = mysqli_query($conn, "SELECT * FROM tarif");
                             while ($data = mysqli_fetch_array($sql)){ 
                         ?>
-                        <div class="col-3 mb-4">
-                            <div class="card shadow" style="width: 11.30rem; height: 13rem; border: 0;
+                        <div class="col-3 mb-4" >
+                            <div class="card shadow" style="width: 11.30rem; height: 13rem; border: 0;">
+                                <div class="card-tarif card-body text-center">
                                     <h5 class="card-title text-primary"><b><?php echo $data['id'] ?></b></h5>
                                     <span class="material-icons text-primary mt-5 mb-4">bolt</span>
                                     <ul class="list-inline text-primary">
