@@ -62,7 +62,7 @@
         <hr/>
         <nav class="menu flex-fill">
             <div class="section-menu">
-                <a class="item-menu" href="tarif.php">Tarif</a>
+                <a class="item-menu" href="../tarif.php">Tarif</a>
                 <?php if($_SESSION['akun']['level'] == 'admin') { ?>
                     <a class="item-menu" href="transaksi.php">Transaksi</a>
                     <a class="item-menu" href="pelanggan.php">Pelanggan</a>

@@ -62,7 +62,7 @@
                 <?php if($_SESSION['akun']['level'] == 'admin') { ?>
                     <a class="item-menu" href="admin/transaksi.php">Transaksi</a>
                     <a class="item-menu" href="admin/pelanggan.php">Pelanggan</a>
-                    <a class="item-menu" href="admin/daftar-pesan.php">Kontak</a>
+                    <a class="item-menu" href="daftar-pesan.php">Kontak</a>
 
                 <?php } if($_SESSION['akun']['level'] == 'user') { ?>
                     <a class="item-menu" href="user/profil.php">Profil</a>
