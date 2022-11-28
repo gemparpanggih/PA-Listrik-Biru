@@ -55,7 +55,7 @@
 
         <!-- Logo -->
         <div class="logo-brand mt-lg-5">
-            <a href="index.php">
+            <a href="../index.php">
                 <img src="../img/logo/logo-listrik.png" alt="Logo" width="45" height="50"/>
             </a>
             <div>
@@ -68,15 +68,15 @@
         <hr/>
         <nav class="menu flex-fill">
             <div class="section-menu">
-                <a class="item-menu" href="tarif.php">Tarif</a>
+                <a class="item-menu" href="../tarif.php">Tarif</a>
                 <?php if($_SESSION['akun']['level'] == 'admin') { ?>
-                    <a class="item-menu" href="admin/transaksi.php">Transaksi</a>
-                    <a class="item-menu" href="admin/pelanggan.php">Pelanggan</a>
-                    <a class="item-menu" href="admin/daftar-pesan.php">Kontak</a>
+                    <a class="item-menu" href="transaksi.php">Transaksi</a>
+                    <a class="item-menu" href="pelanggan.php">Pelanggan</a>
+                    <a class="item-menu" href="daftar-pesan.php">Kontak</a>
 
                 <?php } if($_SESSION['akun']['level'] == 'user') { ?>
-                    <a class="item-menu" href="user/profil.php">Profil</a>
-                    <a class="item-menu" href="user/kontak.php">Kontak</a>
+                    <a class="item-menu" href="../user/profil.php">Profil</a>
+                    <a class="item-menu" href="../kontak.php">Kontak</a>
                 <?php } ?>
             </div>
         </nav>
@@ -157,10 +157,10 @@
                                         <td>
                                             <div class="action">
                                                 <a class="btn-action edit-action" href="pelanggan/edit.php?id=<?php echo $row['id'] ?>">
-                                                    <i class="fa-solid fa-square-pen"></i> Edit
+                                                    <i></i> Edit
                                                 </a>
                                                 <a class="btn-action del-action" href="pelanggan/hapus.php?id=<?php echo $row['id'] ?>">
-                                                    <i class="fa-sharp fa-solid fa-circle-xmark"></i> Hapus
+                                                    <i></i> Hapus
                                                 </a>
                                             </div>
                                         </td>
@@ -175,8 +175,6 @@
                 </div>
             </div>
         </section>
-            <!-- Header -->
-            
     <!-- END MAIN CONTENT -->  
 
     <!-- javascript -->

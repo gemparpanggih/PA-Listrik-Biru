@@ -23,6 +23,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="//db.onlinewebfonts.com/c/213e56f9ea368890b9d2da0577e49dab?family=Zona+Pro" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="stylesheet/nonavbar.css">
@@ -62,7 +64,7 @@
                 <?php if($_SESSION['akun']['level'] == 'admin') { ?>
                     <a class="item-menu" href="admin/transaksi.php">Transaksi</a>
                     <a class="item-menu" href="admin/pelanggan.php">Pelanggan</a>
-                    <a class="item-menu" href="admin/daftar-pesan.php">Kontak</a>
+                    <a class="item-menu" href="daftar-pesan.php">Kontak</a>
 
                 <?php } if($_SESSION['akun']['level'] == 'user') { ?>
                     <a class="item-menu" href="user/profil.php">Profil</a>
@@ -128,30 +130,29 @@
             </div>
             
             <!-- Harga Tarif -->
-            <div class="service-container mode-text">
+            <div class="tarif-admin">
                 <h3>Daftar Tarif</h3>
-                <div class="service-cards">
-                    <?php
-                        require('php/connection.php');
-                        $sql="SELECT * FROM tarif";
-                        $query= mysqli_query($conn, $sql);
-                        while ($data = mysqli_fetch_array($query)) { 
-                    ?>
-                        <div class="card-panel" onclick="window.location='tarif.php'">
-                            <div class="grid-container">
-                                <div>
-                                    <img src="img/voltase/<?php echo $data['foto'] ?>"/>
-                                    <p>
-                                        <?php echo "$data[id]"; ?> ||
-                                        <?php echo "$data[daya]"; ?><br>
-                                    </p>
-                                    <p>
-                                        Rp.<?php echo "$data[tarifperkwh]"; ?>
-                                    </p>
+                <div class="container mt-4">
+                    <div class="row w-75">
+                        <?php
+                            require('php/connection.php');
+
+                            $sql = mysqli_query($conn, "SELECT * FROM tarif");
+                            while ($data = mysqli_fetch_array($sql)){ 
+                        ?>
+                        <div class="col-3 mb-4">
+                            <div class="card shadow" style="width: 11.30rem; height: 13rem; border: 0;
+                                    <h5 class="card-title text-primary"><b><?php echo $data['id'] ?></b></h5>
+                                    <span class="material-icons text-primary mt-5 mb-4">bolt</span>
+                                    <ul class="list-inline text-primary">
+                                        <li>Daya <strong><?php echo $data['daya'] ?></strong></li>
+                                        <li>Tarif/Kwh <strong><?php echo $data['tarifperkwh'] ?></strong></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                    <?php } ?>
+                        <?php } ?>
+                    </div>
                 </div>
             </div>
         </section>

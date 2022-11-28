@@ -1,14 +1,14 @@
 /* Global Css */
-body{
+/* body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     transition: 0.3s;
-}
-footer {
+} */
+/* footer {
     height: 100%;
     margin-top: auto;
-}
+} */
 /* End Global Css */
 
 
@@ -60,15 +60,14 @@ a.admin-aksi-tarif {
     line-height: 27px;
 }
 
-.daftar-data {
+/* .daftar-data {
     padding: 0 70px;
-}
+} */
 
-.table-user table {
+/* .table-user table {
     caption-side: bottom;
     border-collapse: collapse;
     border: 1px solid #A6C0E1;
-    /* background-color: #F7F8FA; */
 }
 footer {
     width: 100%;
@@ -79,7 +78,7 @@ footer {
     flex-direction: column;
     position: absolute;
     bottom: 0;
-}
+} */
 .logout-btn a {
     font-size: 12px;
     display: block;
@@ -96,7 +95,7 @@ footer {
     color: red;
     border: 1px solid red;
 }
-.light-text {
+/* .light-text {
     transition: 0.5s;
     color: #e9f6ff;
 }
@@ -150,7 +149,7 @@ footer {
 .header-item-left a {
     text-decoration: none;
     color: #181a1b;
-}
+} */
 /* End Halaman Profil */
 
 /* # END BAGIAN ADMIN */

@@ -17,8 +17,7 @@
         if($query){
             ?>
                 <script>
-                    alert("Data berhasil dihapus!");
-                    window.location='../profil.php';
+                    window.location='../profil.php?pesan=Data berhasil dihapus!';
                 </script>
             <?php
         }else {
