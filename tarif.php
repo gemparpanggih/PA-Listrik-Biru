@@ -29,19 +29,16 @@
     <!-- CSS -->
     <link rel="stylesheet" href="stylesheet/new/main.css">
     <link rel="stylesheet" href="stylesheet/component/sidebar.css">
-    <link rel="stylesheet" href="stylesheet/nonavbar.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="stylesheet/tarif.css">
-    <link rel="stylesheet" href="stylesheet/landingpage.css">
-    <link rel="stylesheet" href="stylesheet/style-mobile.css">
-    <link rel="stylesheet" href="stylesheet/component/sidebar.css">
-    <link rel="stylesheet" href="stylesheet/nonavbar.css">
+    <!-- <link rel="stylesheet" type="text/css" href="stylesheet/tarif.css"> -->
+    <!-- <link rel="stylesheet" href="stylesheet/landingpage.css"> -->
+    <!-- <link rel="stylesheet" href="stylesheet/style-mobile.css"> -->
+    <!-- <link rel="stylesheet" href="stylesheet/nonavbar.css"> -->
     
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body id="taif">
-    <!-- HEADER -->
     <!-- Sidebar -->
     <aside class="sidebar offcanvas-lg offcanvas-start mode-bg">
         <div class="d-flex  m-4 d-block d-lg-none mode-bg">
@@ -51,12 +48,12 @@
         </div>
 
         <!-- Logo -->
-        <div class="logo-brand mt-lg-5">
+        <div class="logo-brand mt-lg-5 d-flex justify-content-center align-center">
             <a href="index.php">
                 <img src="img/logo/logo-listrik.png" alt="Logo" width="45" height="50"/>
             </a>
             <div>
-                <h6 class="title">Listrik Biru</h6>
+                <h6 class="title fw-bold">Listrik Biru</h6>
                 <p class="tagline">Nyalakan Rumah Anda</p>
             </div>
         </div>
@@ -79,7 +76,7 @@
         </nav>
 
         <!-- FOOTER -->
-        <footer>
+        <footer class="d-flex flex-column" style="position: absolute; bottom: 0;">
             <div class="logout-btn">
                 <a href="auth/logout.php">Logout</a>
             </div>
@@ -88,11 +85,10 @@
         <!-- END FOOTER -->
     </aside>
     <!-- End Sidebar -->
-    <!-- END HEADER -->
 	
     <!-- TARIF CONTENT -->
     <section id="tarif-admin">
-        <div class="container mt-4 d-flex justify-content-center">
+        <div class="container mt-4 d-flex justify-content-end">
             <div class="row w-75">
             <?php
                 require('php/connection.php');
@@ -129,41 +125,6 @@
         </div>
     </section>
     <!-- END TARIF CONTENT -->
-    
-    <!-- FOOTER -->
-    <!-- <div style="border: 1px solid white; margin-top: 225px;"></div>
-    <footer class="mode-bg" style="position: static">
-        <div class="footer-container">
-            <div class="footer-title" id="contact">
-                <h2>CONTACT US</h2>
-            </div>
-            <div class="footer-contact-item">
-                <div class="footer-item">
-                    <h4>Location</h4>
-                    <p>28 Jackson Blvd Ste 1020 Chicago<br>IL 60604-2340<br>Phone: +628 135 158 0524</p>
-                </div>
-                <div class="footer-item">
-                    <h4>Find Us On</h4>
-                    <div class="circle-container">
-                        salah satu fitur pop up box (confirm)
-                        <div class="circle ig">
-                            <a href="https://www.instagram.com/pixel" onclick="return confirm('You will be redirected to other website.');"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                        <div class="circle fb">
-                            <a href="https://www.facebook.com/pixel" onclick="return confirm('You will be redirected to other website.');"><i class="fa-brands fa-facebook"></i></a>
-                        </div>
-                        <div class="circle wa">
-                            <a href="https://www.whatsapp.com/pixel" onclick="return confirm('You will be redirected to other website.');"><i class="fa-brands fa-whatsapp"></i></a>
-                        </div>
-                        <div class="circle tw">
-                            <a href="https://www.twitter.com/pixel" onclick="return confirm('You will be redirected to other website.');"><i class="fa-brands fa-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer> -->
-    <!-- END FOOTER -->
 
     <!-- javascript -->
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>

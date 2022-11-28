@@ -20,8 +20,8 @@
 }
 
 .title {
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 600 !important;
+  font-size: 18px !important;
   color: #131e3f;
   line-height: 27px;
 }
