@@ -110,8 +110,8 @@
                                         <li>Tarif/Kwh <strong><?php echo $data['tarifperkwh'] ?></strong></li>
                                     </ul>
                                     <div class="d-flex flex-row">
-                                        <a href="#" class="admin-aksi-tarif btn btn-primary w-50">Edit</a>
-                                        <a href="#" class="admin-aksi-tarif btn btn-danger w-50">Hapus</a>
+                                        <a href="tarif/edit.php?id=<?php echo"$data[id]"; ?>"        class="admin-aksi-tarif btn btn-primary w-50">Edit</a>
+                                        <a href="tarif/aksi/delete.php?id=<?php echo"$data[id]"; ?>" class="admin-aksi-tarif btn btn-danger w-50">Hapus</a>
                                     </div>
                                 </div>
                             </div>
