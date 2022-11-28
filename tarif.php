@@ -23,17 +23,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="//db.onlinewebfonts.com/c/213e56f9ea368890b9d2da0577e49dab?family=Zona+Pro" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
     <!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="stylesheet/tarif.css">
-    <link rel="stylesheet" href="stylesheet/landingpage.css">
-    <link rel="stylesheet" href="stylesheet/style-mobile.css">
+    <link rel="stylesheet" href="stylesheet/new-main.css">
     <link rel="stylesheet" href="stylesheet/component/sidebar.css">
-    <link rel="stylesheet" href="stylesheet/nonavbar.css">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"/>
- 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
 </head>
 <body>
     <!-- Sidebar -->
@@ -86,42 +86,46 @@
     <!-- TARIF CONTENT -->
     <main class="content flex-fill mode-bg ">
         <section class="d-flex flex-column gap-4">
-        <button aria-controls="sidebar" data-bs-toggle="offcanvas" data-bs-target=".sidebar" aria-label="Button Hamburger"
-            class="sidebarOffcanvas mb-5 btn p-0 border-0 d-flex d-lg-none">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+            <button aria-controls="sidebar" data-bs-toggle="offcanvas" data-bs-target=".sidebar" aria-label="Button Hamburger"
+                class="sidebarOffcanvas mb-5 btn p-0 border-0 d-flex d-lg-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
             
-            <div class="container minggirin-navbar">
-                <div class="grid-container">
+            <div class="tarif-admin">
+                <div class="container mt-4 d-flex justify-content-end">
+                    <div class="row w-75">
                     <?php
                         require('php/connection.php');
-                        $sql="SELECT * FROM tarif";
-                        $query= mysqli_query($conn, $sql);
-                        while ($data = mysqli_fetch_array($query)) {
+
+                        $sql = mysqli_query($conn, "SELECT * FROM tarif");
+                        while ($data = mysqli_fetch_array($sql)){ 
                     ?>
-                        <div>
-                            <img src="img/voltase/<?php echo $data['foto'] ?>" onclick="window.location='tarif/tambah.php'"/>
-                            <p>
-                                <?php echo "$data[id]"; ?> ||
-                                <?php echo "$data[daya]"; ?><br>
-                            </p>
-                            <p>
-                                Rp.<?php echo "$data[tarifperkwh]"; ?>
-                            </p>
-                            <?php if($_SESSION['akun']['level'] == 'admin') { ?>
-                                <p class="aksi">
-                                    <a class="edit" href="tarif/edit.php?id=<?php echo"$data[id]"; ?>">EDIT</a>
-                                    <a class="hapus" href="tarif/aksi/delete.php?id=<?php echo"$data[id]"; ?>" onclick="return confirm('YAKINNN !!!')">HAPUS</a>
-                                </p>
-                            <?php } ?>
-                        </div>
-                    <?php } if($_SESSION['akun']['level'] == 'admin') { ?>
-                        <div class="add-card">
-                            <div class="add-img" onclick="window.location='tarif/tambah.php'">
-                                <img src="img/voltase/add.jpg"/>
+                        <div class="col-3 mb-4">
+                            <div class="card shadow" style="width: 11.30rem; height: 13rem; border: 0;">
+                                <div class="card-tarif card-body text-center">
+                                    <h5 class="card-title text-primary"><b><?php echo $data['id'] ?></b></h5>
+                                    <span class="material-icons text-primary mt-4 mb-4">bolt</span>
+                                    <ul class="list-inline text-primary">
+                                        <li>Daya <strong><?php echo $data['daya'] ?></strong></li>
+                                        <li>Tarif/Kwh <strong><?php echo $data['tarifperkwh'] ?></strong></li>
+                                    </ul>
+                                    <div class="d-flex flex-row">
+                                        <a href="#" class="admin-aksi-tarif btn btn-primary w-50">Edit</a>
+                                        <a href="#" class="admin-aksi-tarif btn btn-danger w-50">Hapus</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     <?php } ?>
+                        <div class="col-3 mb-4">
+                            <div class="card shadow" style="width: 11.30rem; height: 13rem; border: 0;">
+                                <div class="card-body d-flex flex-column justify-content-center">
+                                    <i class="btn fa-solid fa-plus text-primary fs-1 mb-3"></i>
+                                    <a href="#" class="btn stretched-link text-primary"><b>Tambah Tarif</b></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

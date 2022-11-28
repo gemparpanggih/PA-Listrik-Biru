@@ -1,0 +1,134 @@
+
+/* # BAGIAN USER */
+
+/* Halaman Profil */
+.profil-data-user {
+    font-weight: bold;
+    color: #5c5c5c;
+}
+
+.profil-aksi-data a {
+    font-size: 12px;
+    color: black;
+    text-decoration: none;
+}
+
+.profil-aksi-data a:hover {
+    text-decoration: underline;
+}
+
+/* End Halaman Profil */
+
+/* # END BAGIAN USER */
+
+
+
+/* # BAGIAN ADMIN */
+
+/* Halaman Profil */
+.data-tarif li {
+    list-style: none;
+}
+
+.card-tarif h5,
+.card-tarif ul li {
+    font-size: 14px !important;
+}
+
+a.admin-aksi-tarif {
+    font-size: 10px !important;
+}
+
+
+.judul h6 {
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    color: #131e3f;
+    line-height: 27px;
+}
+
+.daftar-data {
+    padding: 0 70px;
+}
+
+.table-user table {
+    caption-side: bottom;
+    border-collapse: collapse;
+    border: 1px solid #A6C0E1;
+    /* background-color: #F7F8FA; */
+}
+
+.logout-btn a {
+    font-size: 12px;
+    display: block;
+    text-decoration: none;
+    padding: 8px 10px;
+    color: #0170CD;
+    border: 1px solid #0170CD;
+    border-radius: 7px;
+    transition: 0.2s;
+}
+
+.logout-btn a:hover {
+    transition: 0.2s;
+    color: red;
+    border: 1px solid red;
+}
+.light-text {
+    transition: 0.5s;
+    color: #e9f6ff;
+}
+
+.light-img {
+    transition: 0.5s;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+.header-item-left h1 {
+    padding-top: 80px;
+    color: #181a1b;
+    text-shadow: 0 0 15px #2579d1 ;
+    font-family: 'Zona Pro', sans-serif;
+}
+
+.header-item-left p {
+    font-size: 14px;
+    color: #181a1b;
+    padding-right: 25%;
+    margin: 10px 0;
+}
+.rent-btn:hover {
+    transition: 0.8s;
+    cursor: pointer;
+    background-color: #131e3f;
+    color: #fff;
+    border: 1px solid #131e3f;
+}
+
+.play-btn {
+	display: inline-block;
+	font-weight: 400;
+	color: #fff;
+	text-align: center;
+	border: 1px solid #fff;
+	padding: 9px 70px;
+	font-size: 1rem;
+	line-height: 1.5;
+	border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: 0.8s;
+}
+
+.play-btn:hover {
+    transition: 0.8s;
+    cursor: pointer;
+	background-color: #fff;
+    color: black;
+}
+.header-item-left a {
+    text-decoration: none;
+    color: #181a1b;
+}
+/* End Halaman Profil */
+
+/* # END BAGIAN ADMIN */
