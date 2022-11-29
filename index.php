@@ -60,13 +60,14 @@
         <hr/>
         <nav class="menu flex-fill">
             <div class="section-menu">
-                <a class="item-menu" href="tarif.php">Tarif</a>
+                <a class="item-menu" href="index.php">Home</a>
                 <?php if($_SESSION['akun']['level'] == 'admin') { ?>
+                    <a class="item-menu" href="admin/tarif.php">Tarif</a>
                     <a class="item-menu" href="admin/transaksi.php">Transaksi</a>
                     <a class="item-menu" href="admin/pelanggan.php">Pelanggan</a>
-                    <a class="item-menu" href="daftar-pesan.php">Kontak</a>
-
+                    <a class="item-menu" href="admin/daftar-pesan.php">Kontak</a>
                 <?php } if($_SESSION['akun']['level'] == 'user') { ?>
+                    <a class="item-menu" href="user/pembelian.php">Pesan</a>
                     <a class="item-menu" href="user/profil.php">Profil</a>
                     <a class="item-menu" href="user/kontak.php">Kontak</a>
                 <?php } ?>
