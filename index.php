@@ -130,8 +130,10 @@
             </div>
             
             <!-- Harga Tarif -->
-            <div class="tarif-admin">
-                <h3>Daftar Tarif</h3>
+            <div class="tarif-admin mx-auto">
+                <div class="about-title">
+                    <h2>Daftar Tarif</h2>
+                </div>
                 <div class="container mt-4">
                     <div class="row">
                         <?php
