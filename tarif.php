@@ -56,15 +56,15 @@
         <hr/>
         <nav class="menu flex-fill">
             <div class="section-menu">
-                <a class="item-menu" href="tarif.php">Tarif</a>
+                <a class="item-menu m-0" href="tarif.php">Tarif</a>
                 <?php if($_SESSION['akun']['level'] == 'admin') { ?>
-                    <a class="item-menu" href="admin/transaksi.php">Transaksi</a>
-                    <a class="item-menu" href="admin/pelanggan.php">Pelanggan</a>
-                    <a class="item-menu" href="admin/daftar-pesan.php">Kontak</a>
+                    <a class="item-menu m-0" href="admin/transaksi.php">Transaksi</a>
+                    <a class="item-menu m-0" href="admin/pelanggan.php">Pelanggan</a>
+                    <a class="item-menu m-0" href="admin/daftar-pesan.php">Kontak</a>
 
                 <?php } if($_SESSION['akun']['level'] == 'user') { ?>
-                    <a class="item-menu" href="user/profil.php">Profil</a>
-                    <a class="item-menu" href="user/kontak.php">Kontak</a>
+                    <a class="item-menu m-0" href="user/profil.php">Profil</a>
+                    <a class="item-menu m-0" href="user/kontak.php">Kontak</a>
                 <?php } ?>
             </div>
         </nav>
@@ -125,8 +125,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
     <!-- END TARIF CONTENT -->
 
     <!-- javascript -->
