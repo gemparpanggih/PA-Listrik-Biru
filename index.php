@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Title & Web Icon -->
-    <title>Listrik Biru - Rosyan</title>
+    <title>Listrik Biru - Gempar</title>
     <link rel="shortcut icon" href="img/logo/logo-listrik.png">
     
     <!-- Link Font -->
@@ -131,8 +131,10 @@
             </div>
             
             <!-- Harga Tarif -->
-            <div class="tarif-admin">
-                <h3>Daftar Tarif</h3>
+            <div class="tarif-admin mx-auto">
+                <div class="about-title">
+                    <h2>Daftar Tarif</h2>
+                </div>
                 <div class="container mt-4">
                     <div class="row">
                         <?php

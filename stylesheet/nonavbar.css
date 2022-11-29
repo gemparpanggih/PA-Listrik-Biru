@@ -156,7 +156,7 @@ header {
     flex-direction: row;
     font-size: 30px;
     text-align: center;
-    padding: 40px 70px 50px 70px;
+    padding: 0px 70px 50px 70px;
 }
 
 .header-item-left {
@@ -166,7 +166,7 @@ header {
 }
 
 .header-item-left h1 {
-    padding-top: 80px;
+    padding-top: 40px;
     color: #181a1b;
     text-shadow: 0 0 15px #2579d1 ;
     font-family: 'Zona Pro', sans-serif;
