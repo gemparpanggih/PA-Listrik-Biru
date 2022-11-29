@@ -70,15 +70,10 @@
         <hr/>
         <nav class="menu flex-fill">
             <div class="section-menu">
-                <a class="item-menu" href="../tarif.php">Tarif</a>
-                <?php if($_SESSION['akun']['level'] == 'admin') { ?>
-                    <a class="item-menu" href="transaksi.php">Transaksi</a>
-                    <a class="item-menu" href="pelanggan.php">Pelanggan</a>
-                    <a class="item-menu" href="daftar-pesan.php">Kontak</a>
-                <?php } if($_SESSION['akun']['level'] == 'user') { ?>
-                    <a class="item-menu" href="user/profil.php">Profil</a>
-                    <a class="item-menu" href="kontak.php">Kontak</a>
-                <?php } ?>
+                <a class="item-menu" href="../index.php">Home</a>
+                <a class="item-menu" href="pembelian.php">Pesan</a>
+                <a class="item-menu" href="profil.php">Profil</a>
+                <a class="item-menu" href="kontak.php">Kontak</a>
             </div>
         </nav>
 
