@@ -98,12 +98,15 @@
             <!-- Profil User -->
             <section id="profil-user">
                 <div class="container mt-5">
-                <?php if(isset($_GET['pesan'])) { ?>
-                    <p class="alert alert-success mb-4"><?php echo $_GET['pesan']; ?></p>
+                <?php if(isset($_GET['success'])) { ?>
+                    <p class="alert alert-success mb-4"><?php echo $_GET['success']; ?></p>
+                <?php } ?> 
+                <?php if(isset($_GET['danger'])) { ?>
+                    <p class="alert alert-danger mb-4"><?php echo $_GET['danger']; ?></p>
                 <?php } ?> 
                     <div class="row d-flex justify-content-center">
-                        <div class="col-2 d-flex flex-row-reverse">
-                            <img src="../img/profil/<?php echo $data['foto'] ?>" class="img-thumbnail w-auto" alt="">
+                        <div class="col-3 d-flex flex-row-reverse">
+                            <img src="../img/profil/<?php echo $data['foto'] ?>" class="img-thumbnail" style="height: 160px;" alt="">
                         </div>
                         <div class="col-5">
                             <div class="row">
@@ -117,8 +120,8 @@
                                     <p class="m-0"><?php echo $data['alamat'] ?></p>
                                 </div>
                                 <div class="col d-flex flex-column justify-content-between text-end profil-aksi-data">
-                                    <a href="profil/ubah-pwd.php?id=<?php echo $data['id'] ?>"><p class="m-0">Edit Akun</p></a>
-                                    <a href="profil/edit.php?id=<?php echo $data['id'] ?>"><p class="m-0">Ubah Password</p></a>
+                                    <a href="profil/edit.php?id=<?php echo $data['id'] ?>"><p class="m-0">Edit Akun</p></a>
+                                    <a href="profil/ubah-pwd.php?id=<?php echo $data['id'] ?>"><p class="m-0">Ubah Password</p></a>
                                 </div>
                             </div>
                         </div>
@@ -158,7 +161,7 @@
                                     <td><?php echo $row['tanggal']?></td>
                                     <td><?php echo $row['nominal']?></td>
                                     <td><?php echo $row['nometer']?></td>
-                                    <td><?php echo $row['token']?></td>
+                                    <td class="fw-bold"><?php echo $row['token']?></td>
                                     <td><?php echo $row['totalkwh']?></td>
                                     <td><?php echo $row['idtarif']?></td>
                                 </tr>

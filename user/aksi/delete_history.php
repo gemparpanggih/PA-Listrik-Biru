@@ -15,16 +15,8 @@
         $query = mysqli_query($conn,$sql);
         
         if($query){
-            ?>
-                <script>
-                    window.location='../profil.php?pesan=Data berhasil dihapus!';
-                </script>
-            <?php
+            header('location: ../profil.php?success=Berhasil menghapus riwayat!');
         }else {
-            ?>
-                <script>
-                    alert("Data gagal dihapus!");
-                </script>
-            <?php
+            header('location: ../profil.php?danger=Gagal menghapus riwayat!');
         }
     }

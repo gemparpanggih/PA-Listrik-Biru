@@ -122,7 +122,7 @@
             <!-- About Us -->
             <div class="about-container mode-text" id="about">
                 <div class="about-title">
-                    <h2>ABOUT US</h2>
+                    <h2>About</h2>
                 </div>
                 <div class="about-content">
                     <p class="about-item-left"><b>Listrik Biru</b> adalah layanan prabayar listrik online Samarinda milik swasta yang berspesialisasi dalam transaksi listrik untuk sistem, mulai dari generasi keenam dan seterusnya. Model bisnis <b>Listrik Biru</b> mirip dengan layanan dalam membeli pulsa secara online dan langganan secara online. <b>Listrik Biru</b> mengirimkan token listrik ke pelanggan dengan biaya yang ditetapkan.</p>
@@ -133,7 +133,7 @@
             <!-- Harga Tarif -->
             <div class="tarif-admin mx-auto">
                 <div class="about-title">
-                    <h2>Daftar Tarif</h2>
+                    <h2>Tarif</h2>
                 </div>
                 <div class="container mt-4">
                     <div class="row">

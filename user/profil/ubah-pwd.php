@@ -38,12 +38,8 @@
 		$data = mysqli_fetch_array($query);
 	?>
     <div class="mainPenggunaEdit">
-        <p    class="pengguna" align="center">Ubah Data Pelanggan</p>
+        <p    class="pengguna" align="center">Ubah Password Pelanggan</p>
         <form class="formPengguna" method='POST'>
-            
-            <label class="ket">PASSWORD</label>
-            <input class="passPengguna" type="password" id="password" value="<?php echo $data['password'] ?>" readonly align="center">
-            
             <label class="ket">PASSWORD BARU</label>
             <input class="passPengguna" type="password" name="password" id="password" placeholder="Password" align="center">
             
@@ -51,7 +47,8 @@
             <input class="passPengguna" type="password" name="confirm-password" id="password" placeholder="Konfirmasi Password" align="center">
 
             <button align="center" type="submit" name="update">Simpan</button>
-            <p      class="kembali" align="center"><a href="../profil.php">Kembali</p>         
+            <p      class="kembali" align="center"><a href="../profil.php">Kembali</p>     
+        </form>    
     </div>
 
     <?php
@@ -65,12 +62,12 @@
                 $query = mysqli_query($conn, $sql2);
                 
                 if($query) {
-                    header('location: ../profil.php');
+                    header('location: ../profil.php?success=Berhasil mengubah password!');
                 } else {
-                    echo"Ubah password Gagal";
+                    header('location: ../profil.php?danger=Gagal mengubah password!');
                 }
             } else {
-                echo"Password tidak sesuai";
+                header('location: ../profil.php?danger=Password yang anda masukkan tidak sesuai!');
             }
         }   
     ?>

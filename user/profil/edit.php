@@ -69,9 +69,9 @@
             $query = mysqli_query($conn,$sql2);
             
             if($query) {
-                header('location: ../profil.php');
+                header('location: ../profil.php?success=Berhasil mengubah data!');
             } else {
-                echo "Edit Pelanggan Gagal";
+                header('location: ../profil.php?danger=Gagal mengubah data!');
             }
         }   
     ?>
