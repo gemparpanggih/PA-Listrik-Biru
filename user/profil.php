@@ -26,7 +26,7 @@
 
     <!-- Title & Web Icon -->
     <title>Listrik Biru</title>
-    <link rel="shortcut icon" href="assets/img/logo/logo-listrik.png">
+    <link rel="shortcut icon" href="../img/logo/logo-listrik.png">
     
     <!-- Link Font -->
     <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
@@ -132,8 +132,20 @@
 
 
         <!-- Riwayat Transaksi -->
-        <?php 
+        <?php
+            $batas = 5;
+            $halaman = isset($_GET['halaman'])?(int)$_GET['halaman'] : 1;
+            $halaman_awal = ($halaman>1) ? ($halaman * $batas) - $batas : 0;
+
+            $previous = $halaman - 1;
+            $next = $halaman + 1;
+
             $read = mysqli_query($conn, "SELECT * FROM transaksi WHERE iduser = '$id_user'");
+            $jumlah_data = mysqli_num_rows($read);
+            $total_halaman = ceil($jumlah_data / $batas);
+
+            $data_transaksi = mysqli_query($conn,"SELECT * FROM transaksi WHERE iduser = '$id_user' LIMIT $halaman_awal, $batas");
+            $nomor = $halaman_awal+1;
 
             if(mysqli_num_rows($read) > 0){
         ?>
@@ -149,13 +161,13 @@
                             <th>TANGGAL</th>
                             <th>NOMINAL</th>
                             <th>NO METER</th>
-                            <th>NO TOKEN</th>
+                            <th>NOMOR TOKEN</th>
                             <th>TOTAL KWH</th>
-                            <th>TARIF</th>
+                            <th>KODE TARIF</th>
                         </tr>
                     </thead>
                     <tbody class="table-group-divider">
-                        <?php while($row = mysqli_fetch_array($read)){ ?>
+                        <?php while($row = mysqli_fetch_array($data_transaksi)){ ?>
                                 <tr class="games-content">
                                     <td><?php echo $row['id']?></td>
                                     <td><?php echo $row['tanggal']?></td>
@@ -168,6 +180,29 @@
                         <?php } ?>
                     </tbody>
                 </table>
+                <?php if(mysqli_num_rows($read) > 5){ ?>
+                    <nav aria-label="Page navigation example align-center">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" <?php if($halaman > 1){ echo "href='?halaman=$previous'"; } ?> aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <?php 
+                                for($x=1;$x<=$total_halaman;$x++){
+                                    ?> 
+                                    <li class="page-item"><a class="page-link" href="?halaman=<?php echo $x ?>"><?php echo $x; ?></a></li>
+                                    <?php
+                                }
+                            ?>
+                            <li class="page-item">
+                                <a class="page-link" <?php if($halaman < $total_halaman) { echo "href='?halaman=$next'"; } ?> aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                <?php } ?>
             </div>
         </section>
         <?php } ?>

@@ -112,10 +112,16 @@
                     <a href="user/pembelian.php">
                         <button class="rent-btn">Pesan!</button>
                     </a>
-
-                    <a href="tarif.php">
-                        <button class="rent-btn">Tarif</button>
-                    </a>
+                    
+                    <?php if($_SESSION['akun']['level'] == 'admin') { ?>
+                        <a href="admin/tarif.php">
+                            <button class="rent-btn">Tarif</button>
+                        </a>
+                    <?php } if($_SESSION['akun']['level'] == 'user') {?>
+                        <a href="#tarif">
+                            <button class="rent-btn">Tarif</button>
+                        </a>
+                    <?php } ?>
                 </div>
             </div>
             
@@ -131,7 +137,7 @@
             </div>
             
             <!-- Harga Tarif -->
-            <div class="tarif-admin mx-auto">
+            <div class="tarif-admin mx-auto" id="tarif">
                 <div class="about-title">
                     <h2>Tarif</h2>
                 </div>

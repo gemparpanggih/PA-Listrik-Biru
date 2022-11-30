@@ -109,7 +109,7 @@
             <button onclick="copy('text-1')">Copy Text</button>
             <p style="font-size: 10px;"><em style='color: red;'>&#x2a;</em> Token listrik dapat anda cek pada halaman profil secara berkala.</p>
         </div>
-        <a align="center" class="btn-lanjutkan" href="../../index.php">Lanjutkan</a>
+        <a align="center" class="btn-lanjutkan" href="../profil.php">Lanjutkan</a>
     </div>
 
     <script>
