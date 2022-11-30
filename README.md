@@ -1,4 +1,4 @@
-# PA Web A1_20 - Listrik Biru
+# PA Web IF_A_20 - Kelompok 2
 ## Link Hosting - http://listrikbiru.epizy.com/
 ### Anggota :
 - 2009106009 - Hendi
