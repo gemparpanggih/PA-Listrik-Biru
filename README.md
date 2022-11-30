@@ -8,4 +8,4 @@
 # Listrik Biru
 Listrik Biru adalah tema dan judul dari website yang kami buat. Website ini berkaitan dengan transaksi pembelian token listrik perbayar dari berbagai golongan dan beragam jesni voltase yang disesuaikan dengan kebutuhan rumah masing-masing. Website ini merupakan proyek akhir dari mata kuliah Pemrograman Web.
 
-## Link Manual Book - https://drive.google.com/file/d/1n1j4HFSRmkoq36jRjfuoCiU-oTov1a41/view?usp=share_link
+## Link Manual Book : <a href="https://drive.google.com/file/d/1n1j4HFSRmkoq36jRjfuoCiU-oTov1a41/view?usp=share_link" >Manual Book Listrik Biru</a>
