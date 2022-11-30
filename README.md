@@ -1,5 +1,5 @@
 # PA Web IF_A_20 - Kelompok 2
-## Link Hosting - http://listrikbiru.epizy.com/
+## Link Hosting - http://listrik-biru.great-site.net/
 ### Anggota :
 - 2009106009 - Hendi
 - 2009106020 - Rausyanfikr Adi Karmayoga 
