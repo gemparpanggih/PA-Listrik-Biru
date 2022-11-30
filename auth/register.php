@@ -31,28 +31,20 @@
 
             $hasil = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
             if(mysqli_fetch_assoc($hasil)) {
-                echo '<script>
-                    alert("Username already registered");
-                </script>';
+                header('location: login.php?danger=Username sudah digunakan!');
             } else {
 
                 $sql = "INSERT INTO user (id, username, nama, telepon, alamat, foto, level, password) VALUES ('$id', '$username', '$nama', '$telepon', '$alamat', '$foto', '$level', '$password')";
                 $push_data = mysqli_query($conn, $sql);
                 
                 if(mysqli_affected_rows($conn) > 0) {
-                    echo '<script>
-                        document.location.href = "login.php?pesan=Akun berhasil didaftarkan!";
-                    </script>';
+                    header('location: login.php?success=Berhasil membuat akun!');
                 } else {
-                    echo '<script>
-                        alert("Registrasi gagal");
-                    </script>';
+                    header('location: login.php?danger=Gagal membuat akun!');
                 }
             }
         } else {
-            echo '<script>
-                alert("Password is incorrect");
-            </script>';
+            header('location: login.php?danger=Konfirmasi password anda berbeda!');
         }
     }
 ?>
@@ -71,6 +63,9 @@
     <!-- Link Font -->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <!-- Bootstrap -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
 
     <!-- CSS -->
     <link rel="stylesheet" href="../stylesheet/Daftar.css">

@@ -35,7 +35,7 @@
     <!-- Title & Web Icon -->
     <title>Listrik Biru - Login</title>
     <link rel="shortcut icon" href="../img/logo/logo-listrik.png">
-    
+
     <!-- CSS -->
     <link rel="Stylesheet" href="../stylesheet/Login.css">
     <link rel="stylesheet" href="../stylesheet/style-mobile.css">
@@ -50,13 +50,20 @@
             <?php if(isset($_GET['pesan'])) { ?>
                 <p class="success-message"><?php echo $_GET['pesan']; ?></p>
             <?php } ?> 
+            <?php if(isset($_GET['success'])) { ?>
+                <p class="success-message"><?php echo $_GET['success']; ?></p>
+            <?php } ?> 
+            <?php if(isset($_GET['danger'])) { ?> 
+                <p class='handle-output'><?php echo $_GET["danger"]; ?></p>
+            <?php } ?>
         </div>
         <form method="post" class="formLogin">
             <input  class="userNameLogin" type="text"     align="center" placeholder="Username" name="username">
             <input  class="passLogin"     type="password" align="center" placeholder="Password" name="password">
         
             <button align="center" name="login" type="submit">Masuk</button>
-            <p      class="daftarLogin" align="center"><a href="register.php">Daftar</p>         
+            <p      class="daftarLogin" align="center"><a href="register.php">Daftar</p>  
+        </form>       
     </div>
 </body>
 </html>
