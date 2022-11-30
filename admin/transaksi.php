@@ -77,7 +77,7 @@ if ($_SESSION['akun']['level'] == 'user') {
         <!-- FOOTER -->
         <footer>
             <div class="logout-btn">
-                <a href="auth/logout.php">Logout</a>
+                <a href="../auth/logout.php">Logout</a>
             </div>
             <p class="Keterangan">Projek Akhir Pemrograman Web</p>
         </footer>
