@@ -93,14 +93,17 @@ if ($_SESSION['akun']['level'] == 'user') {
             </button>
 
             <div class="container mt-5">
-                 <div class="row">
-                    <form method="GET" class="search-container">
-                        <h3 class="mode-text">Cari berdasarkan tanggal</h3>
-                        <input type="date" name="date-from">
-                        <label class="mode-text">hingga</label>
-                        <input type="date" name="date-to">
-                        <button type="submit" name="searchByDate" hidden></button>
-                    </form>
+                <div class="row">
+                    <div class="col d-flex justify-content-start">
+                        <form method="GET">
+                            <div class="input-group mb-3 w-100">
+                                <input type="text" class="form-control" name="keyword" placeholder="Cari Berdasarkan Id"
+                                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" type="submit" name="search"
+                                    id="button-addon2"><i class="fas fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
               
                 <div class="row pt-3">
@@ -124,11 +127,7 @@ if ($_SESSION['akun']['level'] == 'user') {
                                 require('../php/connection.php');
                                 if (isset($_GET['search'])) {
                                     $keyword = $_GET['keyword'];
-                                    $read = mysqli_query($conn, "SELECT * FROM transaksi WHERE iduser = '$keyword'");
-                                } else if (isset($_GET['searchByDate'])) {
-                                    $dateFrom = $_GET['date-from'];
-                                    $dateTo = $_GET['date-to'];
-                                    $read = mysqli_query($conn, "SELECT * FROM transaksi WHERE `tanggal` BETWEEN '$dateFrom' and '$dateTo'");
+                                    $read = mysqli_query($conn, "SELECT * FROM transaksi WHERE id LIKE '%$keyword%' OR iduser LIKE '%$keyword%'");
                                 } else {
                                     $read = mysqli_query($conn, "SELECT * FROM transaksi");
                                 }

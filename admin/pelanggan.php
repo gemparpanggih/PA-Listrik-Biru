@@ -113,7 +113,7 @@ if ($_SESSION['akun']['level'] == 'user') {
                         </form>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row pt-3">
                     <div class="col">
                         <div class="table-responsive">
                             <table class="table table-hover">
